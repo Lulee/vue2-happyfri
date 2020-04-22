@@ -1,4 +1,6 @@
-# happyfri
+# vue2-happyfri
+
+   使用 vue + vue-router + vuex实现的一个答题小项目
 
 ## Project setup
 ```
