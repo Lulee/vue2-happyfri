@@ -1,18 +1,18 @@
 <template>
   <div id="app">
-    <!-- <router-view></router-view> -->
-    <HomePage />
+    <router-view class="view"></router-view>
+    <!-- <HomePage /> -->
   </div>
 </template>
 
 <script>
-import HomePage from './components/pages/HomePage'
+// import HomePage from './components/pages/HomePage'
 
 export default {
-  name: 'App',
-  components:{
-    HomePage
-  }
+  // name: 'App'
+  // components:{
+  //   HomePage
+  // }
 }
 </script>
 
@@ -24,5 +24,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+body{
+  /* 使背景图片充满整个屏幕 */
+  background: url("./assets/1-1.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment:fixed;
 }
 </style>

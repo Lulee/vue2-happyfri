@@ -1,15 +1,20 @@
 <template>
-   <div>问题模块</div>
+  <div>
+    <NoticeComp msg="题目" />
+    <QuestionComp />
+    <CustomButton bclass="next-button" />
+  </div>
 </template>
 
 <script>
-//import QuestionComp from '../QuestionComp'
+import QuestionComp from "../QuestionComp";
+import CustomButton from "../CustomButton";
+import NoticeComp from "../NoticeComp";
 export default {
-   
-//    components:{
-//         QuestionComp
-//    }
-
-
-}
+  components: {
+    QuestionComp,
+    CustomButton,
+    NoticeComp
+  }
+};
 </script>

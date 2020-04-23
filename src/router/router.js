@@ -1,17 +1,20 @@
-import App from '../App'
-// import HomePage from '../components/pages/HomePage'
-// import QuestionPage from '../components/pages/QuestionPage'
-// import ResultPage from '../components/pages/ResultPage'
+// import App from '../App'
+import HomePage from '../components/pages/HomePage'
+// const HomePage = () => import('../components/pages/HomePage')
+// const QuestionPage = () => import('../components/pages/QuestionPage') 
+// const ResultPage = () => import( '../components/pages/ResultPage')
 
 
-// export default [{
+// const routers= [{
 //     path: '/',
 //     component: App,
 //     children: [{
-//         path: '',
+//         path: '/home',
+//         name: 'home',
 //         component: HomePage
 //     }, {
 //         path: '/question',
+//         name:"question",
 //         component: QuestionPage
 //     }, {
 //         path: '/result',
@@ -19,18 +22,19 @@ import App from '../App'
 //     }]
 // }]
 
-export default [{
-    path: '/',
-    component: App,
-    children: [{
-        path: '',
-        component: r => require.ensure([], () => r(require('../components/pages/HomePage')), 'home')
-    }, {
-        path: '/question',
-        component: r => require.ensure([], () => r(require('../components/pages/QuestionPage')), 'question')
-    }, {
-        path: '/result',
-        component: r => require.ensure([], () => r(require('../components/pages/ResultPage')), 'result')
-    }]
-}]
 
+const routers = [
+    {
+        path: '/', component: HomePage 
+    }
+    // {
+    //     path: '/question',
+    //     component: QuestionPage
+    // }, 
+    // {
+    //     path: '/result',
+    //     component: ResultPage   
+    // }
+]
+
+export default routers
