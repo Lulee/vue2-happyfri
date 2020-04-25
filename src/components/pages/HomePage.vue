@@ -2,7 +2,7 @@
   <div>
     <NoticeComp msg="第一周" />
     <div class="home"></div>
-    <CustomButton bclass="start-button" /> 
+    <CustomButton bclass="start-button" @click.native="$router.push('question')" /> 
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button class="button" :class="addClass"  @click="handleClick">
+    <button class="button" :class="addClass">
     </button>
   </div>
 </template>
@@ -9,11 +9,6 @@
 
 export default {
   name: 'CustomButton',
-  data(){
-     return {
-       currentPath : window.location.pathname
-     }
-  },
   computed:{
      addClass(){
        return this.bclass
@@ -21,18 +16,6 @@ export default {
   },
   props: {
     bclass: String
-  },
-  methods:{
-    handleClick(e){
-      window.console.log(e.target)
-      switch(this.currentPath){
-        case '/':
-          this.$router.push('/question')
-          break;
-
-      } 
-     
-    }
   }
 }
 </script>
