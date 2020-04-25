@@ -1,5 +1,6 @@
-{
-    "quesutions": [{
+{   
+    "//":"注释，模拟server返回的数据",
+    "questions": [{
 		"topic_id": 20,
 		"active_topic_id": 4,
 		"type": "ONE",
