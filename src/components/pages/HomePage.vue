@@ -2,7 +2,7 @@
   <div>
     <NoticeComp msg="第一周" />
     <div class="home"></div>
-    <CustomButton bclass="start-button" @click.native="$router.push('question')" /> 
+    <CustomButton b-class="start-button" @click.native="$router.push('question')" /> 
   </div>
 </template>
 
@@ -14,8 +14,7 @@ export default {
   components: {
     CustomButton,
     NoticeComp
-  }
-  
+  } 
 };
 </script>
 
@@ -30,6 +29,8 @@ export default {
   top: 6.1rem;
   left: 2rem;
 }
+
+
 
 
 </style>

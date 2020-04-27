@@ -33,12 +33,12 @@ export default {
 <style scoped>
 .question {
   display: inline-block;
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   color: #fff;
   vertical-align: middle;
-  line-height: 0.7rem;
-
+  text-align: left;
   position: absolute;
+  padding:0 .9rem;
   height: 7rem;
   width: 8rem;
   top: 2.4rem;

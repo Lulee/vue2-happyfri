@@ -1,10 +1,12 @@
 <template>
-  <div class="question-bg">
+  <div>
     <!-- <div v-show="loading" class="loading">Loading...</div> -->
     <div v-if="questions">
       <NoticeComp msg="题目" />
-      <QuestionComp v-bind:question="questions[currentIndex-1]" />
-      <CustomButton bclass="next-button" @click.native="handleClick" />
+       <div class="question-bg">
+      <QuestionComp :question="questions[currentIndex-1]" />
+      </div>
+      <CustomButton b-class="next-button" @click.native="handleClick" />
     </div>
   </div>
 </template>
