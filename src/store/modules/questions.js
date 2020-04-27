@@ -28,10 +28,12 @@ const mutations = {
 }
 
 const actions = {
+
     async fetchQuestions({ commit }) {
-        const response = await axios.get('http://localhost:3000/questions')
-        console.log('questions=',response)
-        commit('setQuestions', response);
+        const response = await axios.get(
+          'http://localhost:3000/questions'
+        );
+        commit('setQuestions', response.data);
       }
 }
 
