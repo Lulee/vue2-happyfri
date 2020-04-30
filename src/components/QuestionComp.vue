@@ -7,8 +7,10 @@
         <input
           type="radio"
           :id="answer.topic_answer_id"
-          :value="answer.answer_name"
-          v-model="checkedValue"
+          :value="answer.topic_answer_id"
+          :name="question.topic_name"
+          v-model="checkedValue"   
+          @change="handlePick"
         />
         <label :for="answer.topic_answer_id">{{choicesArr[index]}}.{{answer.answer_name}}</label>
       </div>
@@ -25,6 +27,11 @@ export default {
       choicesArr: ["A", "B", "C", "D"],
       checkedValue: ""
     };
+  },
+  methods:{
+    handlePick(){
+      this.$emit('pickAnswer',this.checkedValue)
+    }
   }
 };
 </script>
@@ -33,7 +40,8 @@ export default {
 <style scoped>
 .question {
   display: inline-block;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  line-height: 1rem;
   color: #fff;
   vertical-align: middle;
   text-align: left;

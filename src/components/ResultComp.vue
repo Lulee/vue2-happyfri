@@ -1,16 +1,27 @@
 <template>
   <div class="scores-container">
-    <p>
-      <span class="score-number">80</span>
+    <p class="scores">
+      <span class="score-number">{{scores}}</span>
       <span class="score-unit">分</span>
     </p>
-    <div class="tips">智商离爆表只差一步了！</div>
+    <div class="tips">{{tips}}</div>
   </div>
 </template>
 
 <script>
+import { mapGetters, mapMutations, mapActions } from "vuex";
 export default {
-  name: "ResultComp"
+  name: "ResultComp",
+  computed: mapGetters(["scores", "tips", "answerIds"]),
+  created() {
+    this.fetchAnswers().then(() => {
+      this.computeScores(this.answerIds);
+    });
+  },
+  methods: {
+    ...mapMutations(["computeScores"]),
+    ...mapActions(["fetchAnswers"])
+  }
 };
 </script>
 
@@ -22,5 +33,27 @@ export default {
   background-size: 100% 100%;
   margin: 0 auto;
   position: relative;
+}
+.scores {
+  position: absolute;
+  width: 100%;
+  top: 3rem;
+  font-size: 1.4rem;
+  font-weight: 900;
+  -webkit-text-stroke: 0.05rem #412318;
+  font-family: Microsoft YaHei;
+}
+.score-number {
+  font-family: Tahoma, Helvetica, Arial;
+  color: #a51d31;
+}
+.tips {
+  position: absolute;
+  top: 7rem;
+  width: 9rem;
+  left: 0.6rem;
+  color: #3e2415;
+  font-size: 0.65rem;
+  text-align: center;
 }
 </style>

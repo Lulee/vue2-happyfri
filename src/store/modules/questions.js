@@ -1,6 +1,5 @@
-// import api from '../../api/api'
-// import http from '../../api/fetchData'
-import axios from 'axios'
+import api from '../../api/api'
+import http from '../../api/fetchData'
 
 const state = {
     questions:[],
@@ -30,10 +29,8 @@ const mutations = {
 const actions = {
 
     async fetchQuestions({ commit }) {
-        const response = await axios.get(
-          'http://localhost:3000/questions'
-        );
-        commit('setQuestions', response.data);
+        const response = await http.get(api.getAllQuestions);
+        commit('setQuestions', response);
       }
 }
 
